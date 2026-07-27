@@ -1,0 +1,21 @@
+```yaml
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "aeo-audit-lite"
+abstract: "Measures how often an AI engine names a brand, with a Wilson 95% confidence interval. Standard library only."
+authors:
+  - family-names: "Adams"
+    given-names: "Logan"
+    orcid: "https://orcid.org/0009-0009-1235-9479"
+    affiliation: "Clear Cited"
+repository-code: "https://github.com/Clear-Cited/aeo-audit-lite"
+url: "https://clearcited.com"
+license: MIT
+version: "1.0.0"
+date-released: "2026-07-27"
+keywords:
+  - answer-engine-optimization
+  - generative-engine-optimization
+  - ai-search
+  - large-language-models
+```
