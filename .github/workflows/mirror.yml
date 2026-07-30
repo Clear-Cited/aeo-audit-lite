@@ -1,0 +1,19 @@
+```yaml
+name: Mirror to Codeberg
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 4 * * 0"     # weekly safety net
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: cssnr/mirror-repository-action@v1
+        with:
+          host: codeberg.org
+          username: Clear-Cited
+          password: ${{ secrets.a92ee4d4f08e564800c3d798d345cb40e7bb0968 }}
+```
