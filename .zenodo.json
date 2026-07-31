@@ -1,0 +1,25 @@
+{
+  "title": "aeo-audit-lite: repeated-sampling share-of-model measurement with confidence intervals",
+  "upload_type": "software",
+  "description": "<p>Runs a buyer prompt against an AI engine several times and measures how often a brand appears versus named competitors — its <em>share of model</em> — with a confidence interval.</p><p>A single screenshot proves nothing: AI answers are non-deterministic. This measures by repeated sampling, the same way every time.</p><p>Python standard library only. Mock mode by default with clearly illustrative numbers; set PERPLEXITY_API_KEY or OPENAI_API_KEY for real measurement.</p>",
+  "license": "MIT",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Adams, Logan",
+      "orcid": "REPLACE-WITH-YOUR-ORCID",
+      "affiliation": "Clear Cited"
+    }
+  ],
+  "keywords": [
+    "answer engine optimization",
+    "generative engine optimization",
+    "AI search",
+    "citation",
+    "structured data"
+  ],
+  "related_identifiers": [
+    { "identifier": "https://github.com/Clear-Cited/aeo-audit-lite", "relation": "isSupplementTo", "scheme": "url" },
+    { "identifier": "https://clearcited.com/", "relation": "isSupplementTo", "scheme": "url" }
+  ]
+}
