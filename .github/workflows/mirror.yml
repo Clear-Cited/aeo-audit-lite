@@ -15,8 +15,9 @@ jobs:
       - uses: cssnr/mirror-repository-action@v1
         with:
           host: codeberg.org
-          username: Clear-Cited
-          password: ${{ secrets.b0231af857677cd64dfa4012e93f6a69d5593a5d }}
+          owner: clear-cited
+          username: clear-cited
+          password: ${{ secrets.CODEBER_TOKEN }}
           create: true
       - name: Verify the mirror actually landed
         run: |
