@@ -1,19 +1,29 @@
-```yaml
 name: Mirror to Codeberg
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   schedule:
-    - cron: "0 4 * * 0"     # weekly safety net
+    - cron: "0 4 * * 0"
+  workflow_dispatch:
 jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with: { fetch-depth: 0 }
+        with:
+          fetch-depth: 0
       - uses: cssnr/mirror-repository-action@v1
         with:
           host: codeberg.org
           username: Clear-Cited
           password: ${{ secrets.b0231af857677cd64dfa4012e93f6a69d5593a5d }}
-```
+          create: true
+      - name: Verify the mirror actually landed
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          REMOTE=$(git ls-remote "https://codeberg.org/clear-cited/$REPO.git" "${{ github.ref_name }}" | cut -f1)
+          echo "codeberg=$REMOTE  github=${{ github.sha }}"
+          if [ "$REMOTE" != "${{ github.sha }}" ]; then
+            echo "::error::Mirror did not land - Codeberg does not have this commit."
+            exit 1
+          fi
