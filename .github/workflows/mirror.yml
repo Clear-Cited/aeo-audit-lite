@@ -17,7 +17,7 @@ jobs:
           host: codeberg.org
           owner: clear-cited
           username: clear-cited
-          password: ${{ secrets.CODEBER_TOKEN }}
+          password: ${{ secrets.CODEBERG_TOKEN }}
           create: true
       - name: Verify the mirror actually landed
         run: |
