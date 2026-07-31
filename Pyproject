@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aeo-audit-lite"
+version = "0.1.0"
+description = "Measure share of model: run a buyer prompt against an AI engine repeatedly and report how often a brand appears versus competitors, with a confidence interval."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Logan Adams", email = "hello@clearcited.com" }]
+keywords = ["aeo", "geo", "ai-search", "citation", "structured-data"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://clearcited.com/"
+Source = "https://github.com/Clear-Cited/aeo-audit-lite"
+
+[project.scripts]
+aeo-audit-lite = "aeo_audit_lite:main"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["aeo_audit_lite.py"]
