@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
       - uses: cssnr/mirror-repository-action@v1
         with:
-          host: codeberg.org
+          host: https://codeberg.org
           owner: clear-cited
           username: clear-cited
           password: ${{ secrets.CODEBERG_TOKEN }}
