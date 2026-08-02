@@ -1,5 +1,9 @@
 # aeo-audit-lite
 
+[![PyPI](https://img.shields.io/pypi/v/aeo-audit-lite.svg)](https://pypi.org/project/aeo-audit-lite/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21757553.svg)](https://doi.org/10.5281/zenodo.21757553)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **Does AI actually recommend your product?** Run a buyer prompt against an AI
 engine several times and measure how often your brand shows up versus named
 competitors — your *share of model* — with a confidence interval.
@@ -10,6 +14,16 @@ This measures properly, the same way every time.
 - **Zero dependencies** — Python standard library only.
 - **Mock mode by default** — runs offline with illustrative numbers.
 - **Bring your own key** — set `PERPLEXITY_API_KEY` or `OPENAI_API_KEY` for real data.
+
+## Install
+
+```bash
+pip install aeo-audit-lite
+```
+
+That installs an `aeo-audit-lite` command. Everything below works the same either
+way — `aeo-audit-lite --mock` and `python aeo_audit_lite.py --mock` are the same
+program. Python 3.9+, no dependencies.
 
 ## Usage
 
@@ -64,6 +78,24 @@ vibes.
 | `--runs` | number of repetitions (default 10) |
 | `--engine` | `perplexity` (default) or `openai` |
 | `--mock` | force offline mock mode |
+
+## Cite this
+
+Every release is archived on Zenodo with a DOI, and the repo carries a
+`CITATION.cff` so GitHub’s **Cite this repository** box works.
+
+| | DOI |
+|---|---|
+| **Cite the software** (always resolves to the latest version) | [10.5281/zenodo.21757553](https://doi.org/10.5281/zenodo.21757553) |
+| **Cite this exact release** (v0.1.0) | [10.5281/zenodo.21757554](https://doi.org/10.5281/zenodo.21757554) |
+
+The method behind it is written up in the protocol paper,
+[10.5281/zenodo.21614890](https://doi.org/10.5281/zenodo.21614890).
+
+## Mirror
+
+Mirrored to Codeberg at <https://codeberg.org/clear-cited/aeo-audit-lite>, tags
+included, so the project does not depend on any single host.
 
 ## License
 
