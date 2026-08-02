@@ -2,6 +2,7 @@ name: Mirror to Codeberg
 on:
   push:
     branches: [main, master]
+    tags: ['v*']
   schedule:
     - cron: "0 4 * * 0"
   workflow_dispatch:
@@ -25,6 +26,6 @@ jobs:
           REMOTE=$(git ls-remote "https://codeberg.org/clear-cited/$REPO.git" "${{ github.ref_name }}" | cut -f1)
           echo "codeberg=$REMOTE  github=${{ github.sha }}"
           if [ "$REMOTE" != "${{ github.sha }}" ]; then
-            echo "::error::Mirror did not land - Codeberg does not have this commit."
+            echo "::error::Mirror did not land - Codeberg does not have this ref."
             exit 1
           fi
